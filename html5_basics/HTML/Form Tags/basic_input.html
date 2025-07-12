@@ -12,25 +12,103 @@
         <input
           type="text"
           name="username"
+          id="username"
           placeholder="Enter username"
           required
         />
         <br />
         <br />
         <label for="email">Email :</label>
-        <input type="email" name="email" placeholder="Enter email" required />
+        <input
+          type="email"
+          name="email"
+          id="email"
+          placeholder="Enter email"
+          required
+        />
         <br />
         <br />
         <label for="password">Password :</label>
         <input
           type="password"
           name="password"
+          id="password"
           placeholder="Enter password"
           required
         />
         <br />
         <br />
+        <label for="gender">Gender :</label>
+        <input type="radio" name="gender" id="Male" /> Male &nbsp;
+        <input type="radio" name="gender" id="Female" /> Female &nbsp;
+        <input type="radio" name="gender" id="Transgender" /> Transgender &nbsp;
+        <input type="radio" name="gender" id="NotToSay" /> Prefer not to say
+        <br />
+        <br />
+        <label for="hobbies">Hobbies :</label>
+        <input type="checkbox" name="hobbies" id="Reading" /> Reading &nbsp;
+        <input type="checkbox" name="hobbies" id="Writing" /> Writing &nbsp;
+        <input type="checkbox" name="hobbies" id="Swimming" /> Swimming &nbsp;
+        <input type="checkbox" name="hobbies" id="Playing" /> Playing &nbsp;
+        <input type="checkbox" name="hobbies" id="Travelling" /> Travelling
+        &nbsp; <input type="checkbox" name="hobbies" id="Cooking" /> Cooking
+        &nbsp;
+        <br />
+        <br />
+        <label for="dateOfBirth">Date of Birth :</label>
+        <input type="date" name="dateOfBirth" id="dob" /> <br />
+        <br />
+        <label for="dateAndTime">Date and Time :</label>
+        <input type="datetime-local" name="dateAndTime" id="dateAndTime" />
+        <br />
+        <br />
+        <label for="color">Choose your fav color :</label>
+        <input type="color" name="color" id="color" /> <br />
+        <br />
+        <label for="resume">Drop your CV :</label>
+        <input type="file" name="resume" id="resume" accept=".pdf, .docx" />
+        <br />
+        <br />
+        <label for="number">Contact no. :</label>
+        <input
+          type="number"
+          name="number"
+          id="number"
+          placeholder="Enter contact number"
+          required
+        />
+        <br />
+        <br />
+        <label for="telephone">Telephone no. :</label>
+        <input
+          type="tel"
+          name="telephone"
+          id="telephone"
+          placeholder="Enter telephone number"
+          required
+        />
+        <br />
+        <br />
+        <label for="search">Search your file :</label>
+        <input
+          type="search"
+          name="search"
+          id="search"
+          placeholder="Search here"
+        />
+        <br />
+        <br />
+        <label for="website">Your website url :</label>
+        <input
+          type="url"
+          name="website"
+          id="website"
+          placeholder="Enter your website url"
+        />
+        <br />
+        <br />
         <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
       </form>
     </center>
   </body>
