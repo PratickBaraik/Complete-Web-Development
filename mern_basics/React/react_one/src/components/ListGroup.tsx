@@ -1,33 +1,39 @@
-function ListGroup() {
-    let items = [
-        'New York',
-        'San Francisco',
-        'Tokyo',
-        'London',
-        'Paris'
-    ];
+import { useState } from "react";
 
-    let headings = [
-        'First Heading',
-        'Second Heading',
-        'Third Heading',
-        'Forth Heading',
-        'Fifth Heading'
-    ];
+interface Props {
+    items: string[];
+    heading: string;
+    onSelectItem: (item: string) => void;
+}
 
-    let descriptions = [
-        'This is first description.',
-        'This is second description.',
-        'This is third description.',
-        'This is forth description.',
-        'This is fifth description.'
-    ];
+function ListGroup({ items, heading, onSelectItem }: Props) {
+
+
+    // let headings = [
+    //     'First Heading',
+    //     'Second Heading',
+    //     'Third Heading',
+    //     'Forth Heading',
+    //     'Fifth Heading'
+    // ];
+
+    // let descriptions = [
+    //     'This is first description.',
+    //     'This is second description.',
+    //     'This is third description.',
+    //     'This is forth description.',
+    //     'This is fifth description.'
+    // ];
+
+    const [selectedIndexFirst, setSelectedIndexFirst] = useState(-1);
+    // const [selectedIndexSecond, setSelectedIndexSecond] = useState(-1);
+
 
     // items = [];
     // headings = [];
     // descriptions = [];
 
-    if (items.length === 0 && headings.length === 0 && descriptions.length === 0) {
+    if (items.length === 0) {
         return <>
             <h1>List Group</h1>
             <p>No items found.</p>
@@ -36,24 +42,39 @@ function ListGroup() {
         return (
             <>
                 <section>
-                    <h1>First List Type</h1>
+                    <h1>{heading}</h1>
                     <ul className="list-group list-group-flush">
-                        {items.map((item, index) => <li onClick={(event) => console.log(event)} className="list-group-item" key={item}>{item}</li>)}
+                        {items.map((item, index) =>
+                            <li
+                                className={selectedIndexFirst === index ? 'list-group-item active' : 'list-group-item'}
+                                key={item}
+                                onClick={() => {
+                                    setSelectedIndexFirst(index);
+                                    onSelectItem(item);
+                                }}
+                            >
+                                {item}
+                            </li>
+                        )}
                     </ul>
                 </section>
-                <section>
+                {/* <section>
                     <h1>Second List Type</h1>
-                    <ol className="list-group list-group-numbered">
+                    <dl className="list-group list-group-numbered">
                         {headings.map((heading, index) => (
-                            <li onClick={() => console.log(index + 1, heading, descriptions[index])} className="list-group-item d-flex align-items-start" key={heading}>
+                            <li
+                                onClick={() => { setSelectedIndexSecond(index); }}
+                                className={selectedIndexSecond === index ? 'list-group-item active' : 'list-group-item'}
+                                key={heading}
+                            >
                                 <div className="ms-2 me-auto">
                                     <div className="fw-bold">{heading}</div>
                                     {descriptions[index]}
                                 </div>
                             </li>
                         ))}
-                    </ol>
-                </section>
+                    </dl>
+                </section> */}
             </>
         );
     }
