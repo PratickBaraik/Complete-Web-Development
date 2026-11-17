@@ -25,12 +25,21 @@ function Profile() {
   );
 }
 
+function Congratulations() {
+  return (
+    <>
+      <h1>Good Job!</h1>
+    </>
+  );
+}
+
 export default function Gallery() {
   return (
     <section>
       <h1>The Pretty Little Bear with a Rose</h1>
       <Profile />
       <Profile />
+      <Congratulations />
     </section>
   );
 }
