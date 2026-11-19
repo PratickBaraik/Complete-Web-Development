@@ -38,7 +38,9 @@ export default function Gallery() {
     <section>
       <h1>The Pretty Little Bear with a Rose</h1>
       <Profile />
+      <Congratulations />
       <Profile />
+      <Congratulations />
     </section>
   );
 }
